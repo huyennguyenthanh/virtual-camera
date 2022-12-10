@@ -21,11 +21,11 @@ function App() {
     <ChakraProvider theme={theme}>
       {/* <Logo h="40vmin" pointerEvents="none" /> */}
       <Stack direction={['column', 'row']} p={10}  minHeight="100%" minWidth="100%">
-        <VStack pt="100" pb="20" alignItems="inherit">
+        <VStack minHeight="100%">
           <Title ></Title>
           <InputName inputName={inputName}></InputName>
         </VStack>
-        <VStack>
+        <VStack minHeight="100%">
           <Camera></Camera>
         </VStack>
       </Stack>

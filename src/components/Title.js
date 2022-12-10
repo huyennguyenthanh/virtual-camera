@@ -19,9 +19,9 @@ export default function Title() {
         <Stack >
             <Heading
                 fontWeight="extrabold"
-                bgGradient='linear(to-r, blue.500, blue.300, blue.500)'
+                bgGradient='linear(to-r, blue.500, blue.300, blue.200, pink.300, blue.500)'
                 bgClip='text'
-                size="4xl"
+                size="3xl"
                 paddingBottom="5"
                 >
                 Video Stream
@@ -31,7 +31,7 @@ export default function Title() {
                 paddingBottom="20"
                 
             >
-                Connect, collabrate, and celebrate from anywhere with GoogleMeet
+                Connect, collabrate, and celebrate from anywhere with Virtual Camera
             </Text>
         </Stack>
 

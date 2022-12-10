@@ -18,7 +18,10 @@ export default function InputName({ inputName }) {
         console.log(content)
         setContent('');
         inputName(content)
+        console.log(_isSubmitted.value)
         _isSubmitted.value = true;
+        console.log(_isSubmitted.value)
+
 
     }
     const [content, setContent] = useState('');
@@ -30,16 +33,16 @@ export default function InputName({ inputName }) {
         return (
             <form
                 onSubmit={handleSubmit}>
-                <HStack>
+                <HStack pl="0">
                     <Input
-
+                        w="70%"
                         placeholder='Enter display name'
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
                     />
                     <Button
                         type='submit'
-                        colorScheme='teal'
+                        colorScheme='twitter'
                         variant='solid'>
                         Next
                     </Button>
