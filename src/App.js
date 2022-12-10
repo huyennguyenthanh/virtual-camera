@@ -1,40 +1,34 @@
 import React from 'react';
 import {
   ChakraProvider,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
+  Stack,
   theme,
+  VStack,
 } from '@chakra-ui/react';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
+
+import Title from './components/Title';
 import { Logo } from './Logo';
+import Camera from './components/Camera';
+import InputName from './components/InputName';
+
 
 function App() {
+  function inputName(name) {
+    console.log("hello")
+    console.log(name)
+  }
   return (
     <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text>
-              Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
-            </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
-          </VStack>
-        </Grid>
-      </Box>
+      {/* <Logo h="40vmin" pointerEvents="none" /> */}
+      <Stack direction={['column', 'row']} p={10}  minHeight="100%" minWidth="100%">
+        <VStack pt="100" pb="20" alignItems="inherit">
+          <Title ></Title>
+          <InputName inputName={inputName}></InputName>
+        </VStack>
+        <VStack>
+          <Camera></Camera>
+        </VStack>
+      </Stack>
     </ChakraProvider>
   );
 }
