@@ -1,30 +1,39 @@
 import React from 'react'
-import { Input, FormControl, Button, HStack, Stack } from '@chakra-ui/react'
-
+import { useRef } from 'react'
+import { Input, Button, HStack, Stack } from '@chakra-ui/react'
+import { useDisclosure } from '@chakra-ui/react'
+import {
+    AlertDialog,
+    AlertDialogBody,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogContent,
+    AlertDialogOverlay,
+  } from '@chakra-ui/react'
 
 export default function MeetingCode() {
+
+    const { isOpen, onOpen, onClose } = useDisclosure()
+    const cancelRef = useRef()
+
+    function handleGenerateCode(e) {
+        e.preventDefault();
+
+    }
+
     return (
         <Stack pl="0" alignItems="inherit">
             <Button
-                w="60%"
+                w="80%"
                 alignItems="center"
                 color="whiteAlpha.900"
                 colorScheme="twitter"
-               
+                onClick={onOpen}
             >Generate new meeting code</Button>
-            <HStack>
-                {/* onClick={() =>
-                    toast({
-                        title: 'Account created.',
-                        description: "We've created your account for you.",
-                        status: 'success',
-                        duration: 9000,
-                        isClosable: true,
-                    })
-                }
-                
- */}
 
+
+
+            <HStack>
                 <Input
                     w="60%"
 

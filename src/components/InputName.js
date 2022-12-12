@@ -33,9 +33,9 @@ export default function InputName({ inputName }) {
         return (
             <form
                 onSubmit={handleSubmit}>
-                <HStack pl="0">
+                <HStack pl="0" >
                     <Input
-                        w="70%"
+                        alignItems="flex-start"
                         placeholder='Enter display name'
                         value={content}
                         onChange={(e) => setContent(e.target.value)}
