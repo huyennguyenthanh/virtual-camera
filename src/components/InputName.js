@@ -15,13 +15,12 @@ export default function InputName({ inputName }) {
             return;
         }
 
-        console.log(content)
+       
         setContent('');
         inputName(content)
-        console.log(_isSubmitted.value)
+     
         _isSubmitted.value = true;
-        console.log(_isSubmitted.value)
-
+    
 
     }
     const [content, setContent] = useState('');
@@ -35,7 +34,7 @@ export default function InputName({ inputName }) {
                 onSubmit={handleSubmit}>
                 <HStack pl="0" >
                     <Input
-                        alignItems="flex-start"
+                       
                         placeholder='Enter display name'
                         value={content}
                         onChange={(e) => setContent(e.target.value)}

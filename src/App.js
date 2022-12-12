@@ -16,8 +16,8 @@ import InputName from './components/InputName';
 
 function App() {
   function inputName(name) {
-    console.log("hello")
-    console.log(name)
+    console.log("hello: " + name)
+ 
   }
   return (
     <ChakraProvider theme={theme}>
