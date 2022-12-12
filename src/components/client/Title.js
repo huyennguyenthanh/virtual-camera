@@ -16,7 +16,7 @@ export default function Title() {
 
    
     return (
-        <Stack >
+        <Stack alignItems="inherit">
             <Heading
                 fontWeight="extrabold"
                 bgGradient='linear(to-r, blue.500, blue.300, blue.200, pink.300, blue.500)'

@@ -1,45 +1,72 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
+  Button,
+  HStack,
   ChakraProvider,
-  Container,
-  Grid, GridItem,
-  Stack,
   theme,
-  VStack,
+  Center
 } from '@chakra-ui/react';
 
-import Title from './components/Title';
-import { Logo } from './Logo';
-import Camera from './components/Camera';
-import InputName from './components/InputName';
+import AppClient from './components/AppClient';
+import AppAdmin from './components/AppAdmin';
 
 
 function App() {
-  function inputName(name) {
-    console.log("hello: " + name)
- 
-  }
-  return (
-    <ChakraProvider theme={theme}>
-      {/* <Logo h="40vmin" pointerEvents="none" /> */}
-     
-     
-      <Stack direction={['column', 'row']} p={10} w="100%" h="100%" spacing="20">
-      <GridItem w='100%'>
-        <VStack alignItems="flex-start" >
-          <Title ></Title>
-          <InputName inputName={inputName}></InputName>
-        </VStack>
-        </GridItem>
-        <GridItem w='100%'>
-        <VStack alignItems="center">
-          <Camera></Camera>
-        </VStack>
-        </GridItem>
-      </Stack>
-    
-    </ChakraProvider>
-  );
-}
 
+  const [role, setRole] = useState();
+
+  function handleRole(e) {
+
+    e.preventDefault();
+    console.log(e.target.value);
+    setRole(e.target.value)
+
+  }
+
+  if (role) {
+    if (role === "client") {
+      return (
+        <AppClient></AppClient>
+      )
+    } else if (role === "admin") {
+      return (
+        <AppAdmin></AppAdmin>
+
+      )
+
+    }
+
+  } else {
+    return (
+      <ChakraProvider theme={theme}>
+        <Center height="600">
+
+          <HStack
+            margin="0"
+            position="absolute"
+            top="50%"
+            left="50%"
+          // msTransform="translateY(-50%)"
+          // transform="translateY(-50%)"
+          >
+            <Button
+              type="button"
+              colorScheme="twitter"
+              value={"admin"}
+              onClick={handleRole}
+            >Admin</Button>
+            <Button
+              type="button"
+              colorScheme="twitter"
+              value={"client"}
+              onClick={handleRole}
+            >Client</Button>
+          </HStack>
+        </Center>
+      </ChakraProvider>
+
+
+    )
+  }
+}
 export default App;
